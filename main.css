@@ -1,0 +1,107 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  font-family: "Montserrat",sans-serif;
+}
+
+nav {
+  height: 100%;
+  background-color: #fafafa;
+  width: 300px;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 0;
+}
+
+nav h1 {
+  margin: 0px;
+  padding: 0.5em 0;
+}
+
+nav h2 {
+  margin: 0px;
+  padding: 0.5em 0;
+  font-size: 1.1em;
+}
+
+ul.shader-list {
+  padding: 0 0.5em;
+  margin-top: 0;
+}
+
+ul.shader-list>li {
+  list-style: none;
+  padding: 0.3em 0;
+  cursor: pointer;
+}
+
+ul.shader-list>li:hover {
+  background: #dadada;
+}
+
+ul.shader-list label {
+  display: block;
+  cursor: pointer;
+}
+
+ul.tags {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+ul.tags>li {
+  display: inline-block;
+  list-style: none;
+  border: 1px solid grey;
+  border-radius: 3px;
+  font-size: 0.8em;
+  margin-right: 0.4em;
+  padding: 1px 3px;
+}
+
+ul.tags>li:hover {
+  background-color: #bababa;
+}
+
+.editors {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.editors .editor {
+  flex-grow: 1;
+  border: 1px solid #999;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.editors .editor.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .editors .editor:last-child {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  nav {
+    width: 100%;
+    height: auto;
+  }
+
+  .shader-list {
+    display: none;
+  }
+}

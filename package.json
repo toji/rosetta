@@ -1,0 +1,15 @@
+{
+  "name": "rosetta",
+  "version": "0.0.1",
+  "description": "Side by side comparisons of shading language snippets",
+  "main": "main.js",
+  "scripts": {
+    "buildShaderList": "node ./scripts/build-shader-list.js"
+  },
+  "author": "Brandon Jones",
+  "license": "MIT",
+  "dependencies": {
+    "monaco-editor": "^0.35.0",
+    "vue": "^3.2.47"
+  }
+}
