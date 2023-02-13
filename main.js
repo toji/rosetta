@@ -100,7 +100,7 @@ for (const container of containers) {
       enabled: false
     },
     automaticLayout: true,
-    lineNumbers: false,
+    //lineNumbers: false,
   });
   editors.push(editor);
 }

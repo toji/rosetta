@@ -108,6 +108,8 @@ ul.tags>li:hover {
 
 .editors .editor .text-area {
   flex-grow: 1;
+  border-top-left-radius: 5px;
+  border: 1px solid #1e1e1e;
 }
 
 .editors .editor.hidden {

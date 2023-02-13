@@ -41,6 +41,15 @@ export const shaderList = {
         "wgsl",
         "glsl"
       ]
+    },
+    "Uniforms And Textures": {
+      "name": "Uniforms And Textures",
+      "url": "./categories/snippets/uniforms-and-textures",
+      "extensions": [
+        "wgsl",
+        "glsl",
+        "es3.glsl"
+      ]
     }
   }
 };
