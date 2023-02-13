@@ -17,6 +17,7 @@ const app = createApp({
       selectedFile: shaderList.About.Welcome,
       selectedExtension: 'md',
       code: '',
+      navCollapsed: true,
     }
   },
   computed: {
@@ -52,6 +53,7 @@ const app = createApp({
     async displayShader(shaderFile, extension) {
       this.selectedFile = shaderFile;
       this.selectedExtension = extension;
+      this.navCollapsed = true;
 
       loadShader(shaderFile.url, extension);
     }
@@ -60,7 +62,7 @@ const app = createApp({
 app.mount('#rosetta');
 
 // Initialize monaco editors
-const containers = document.querySelectorAll('.editor');
+const containers = document.querySelectorAll('.text-area');
 if (containers.length > 1) {
   containers[1].classList.add('hidden');
 }
@@ -98,6 +100,7 @@ for (const container of containers) {
       enabled: false
     },
     automaticLayout: true,
+    lineNumbers: false,
   });
   editors.push(editor);
 }

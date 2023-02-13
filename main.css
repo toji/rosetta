@@ -16,6 +16,12 @@ nav {
   flex-direction: column;
 }
 
+nav .expand {
+  display: none;
+  font-size: 0.8em;
+  float: right;
+}
+
 nav>div {
   margin: 0;
   padding: 0 1em;
@@ -121,6 +127,12 @@ ul.tags>li:hover {
   padding: 0.5em;
 }
 
+.editors .editor .tabs .filename {
+  display: block;
+  float: right;
+  margin: 0.7em;
+}
+
 .editors .editor .tabs .tab:hover {
   background-color: #dadada;
 }
@@ -132,9 +144,9 @@ ul.tags>li:hover {
 }
 
 @media only screen and (max-width: 900px) {
-  .editors .editor:last-child {
+  /*.editors .editor:last-child {
     display: none;
-  }
+  }*/
 }
 
 @media only screen and (max-width: 768px) {
@@ -147,7 +159,11 @@ ul.tags>li:hover {
     height: auto;
   }
 
-  .shader-list {
+  nav .expand {
+    display: block;
+  }
+
+  nav.collapsed>div {
     display: none;
   }
 }

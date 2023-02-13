@@ -6,12 +6,14 @@
 export const shaderList = {
   "About": {
     "LICENSE": {
+      "name": "LICENSE",
       "url": "./categories/about/LICENSE",
       "extensions": [
         "md"
       ]
     },
     "Welcome": {
+      "name": "Welcome",
       "url": "./categories/about/welcome",
       "extensions": [
         "md"
@@ -20,6 +22,7 @@ export const shaderList = {
   },
   "Shaders": {
     "Solid Color": {
+      "name": "Solid Color",
       "url": "./categories/shaders/solid-color",
       "extensions": [
         "wgsl",
@@ -32,6 +35,7 @@ export const shaderList = {
   },
   "Snippets": {
     "Linear To Srgb": {
+      "name": "Linear To Srgb",
       "url": "./categories/snippets/linear-to-srgb",
       "extensions": [
         "wgsl",

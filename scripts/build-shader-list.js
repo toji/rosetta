@@ -24,6 +24,7 @@ fs.readdirSync(targetFolder).forEach(folder => {
 
     if (!files[formatted]) {
       files[formatted] = {
+        name: formatted,
         url: `${targetFolder}${folder}/${filename}`,
         extensions: []
       };

@@ -31,10 +31,10 @@
   </head>
 
   <body id='rosetta'>
-    <nav>
+    <nav :class="{ collapsed: navCollapsed }">
       <h1>
         Shader Comparisons
-        <div class='expand'></div>
+        <div class='expand' @click='navCollapsed = !navCollapsed'>Expand</div>
       </h1>
       <div>
         <input type='text' v-model="filter" placeholder="Filter..."></input>
@@ -56,7 +56,8 @@
     </nav>
     <div class='editors'>
       <div class='editor'>
-        <div class='tabs' selected-index="1">
+        <div class='tabs'>
+          <span class='filename'>{{selectedFile.name}}</span>
           <span class='tab'
             :class="{ selected: extension == selectedExtension }"
             v-for='extension in selectedFile.extensions'
