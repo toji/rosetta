@@ -1,8 +1,6 @@
 import { createApp } from './node_modules/vue/dist/vue.esm-browser.js'
 import { shaderList } from './shader-list.js'
 
-const SHADER_DIR = './shaders';
-
 const EXTENSION_LANGUAGES = {
   md: 'markdown',
   wgsl: 'rust',
@@ -11,11 +9,14 @@ const EXTENSION_LANGUAGES = {
   msl: 'cpp',
 }
 
-createApp({
+const app = createApp({
   data() {
     return {
       filter: '',
-      shaderList
+      shaderList,
+      selectedFile: shaderList.About.Welcome,
+      selectedExtension: 'md',
+      code: '',
     }
   },
   computed: {
@@ -48,15 +49,21 @@ createApp({
     }
   },
   methods: {
-    displayShader(shaderName, extension) {
-      loadShader(shaderName, extension);
+    async displayShader(shaderFile, extension) {
+      this.selectedFile = shaderFile;
+      this.selectedExtension = extension;
+
+      loadShader(shaderFile.url, extension);
     }
   }
-}).mount('#rosetta');
+});
+app.mount('#rosetta');
 
 // Initialize monaco editors
 const containers = document.querySelectorAll('.editor');
-containers[1].classList.add('hidden');
+if (containers.length > 1) {
+  containers[1].classList.add('hidden');
+}
 
 const editors = [];
 
