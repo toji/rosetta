@@ -11,20 +11,41 @@ html, body {
 nav {
   height: 100%;
   width: 300px;
-  padding-left: 1em;
-  padding-right: 1em;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+nav>div {
+  margin: 0;
+  padding: 0 1em;
 }
 
 nav h1 {
   margin: 0px;
-  padding: 0.5em 0;
+  padding: 0.5em 1em;
 }
 
 nav h2 {
   margin: 0px;
   padding: 0.5em 0;
   font-size: 1.1em;
+}
+
+nav .nav-menu {
+  flex: 1;
+  margin: 0;
+  margin-top: 0.5em;
+  padding: 0 1em;
+  overflow-y: auto;
+}
+
+nav input {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 0.5em;
+  padding: 0.2em 0.5em;
 }
 
 ul.shader-list {
@@ -77,15 +98,10 @@ ul.tags>li:hover {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
 }
 
 .editors .editor .text-area {
   flex-grow: 1;
-  display: block;
-  height: 100%;
-  width: 100%;
 }
 
 .editors .editor.hidden {

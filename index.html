@@ -34,22 +34,24 @@
     <nav>
       <h1>
         Shader Comparisons
-        <div class='expand' ></div>
+        <div class='expand'></div>
       </h1>
       <div>
         <input type='text' v-model="filter" placeholder="Filter..."></input>
       </div>
-      <div v-for='(files, category) in filteredShaderList'>
-        <hr/>
-        <h2>{{category}}</h2>
-        <ul class='shader-list'>
-          <li v-for='(file, name) in files' @click='displayShader(file, file.extensions[0])'>
-            <label>{{name}}</label>
-            <ul class='tags' >
-              <li v-for='ext in file.extensions' @click.stop='displayShader(file, ext)'>{{ext}}</li>
-            </ul>
-          </li>
-        </ul>
+      <div class='nav-menu'>
+        <div v-for='(files, category) in filteredShaderList'>
+          <hr/>
+          <h2>{{category}}</h2>
+          <ul class='shader-list'>
+            <li v-for='(file, name) in files' @click='displayShader(file, file.extensions[0])'>
+              <label>{{name}}</label>
+              <ul class='tags' >
+                <li v-for='ext in file.extensions' @click.stop='displayShader(file, ext)'>{{ext}}</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
     <div class='editors'>
