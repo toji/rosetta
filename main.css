@@ -101,13 +101,13 @@ ul.tags>li:hover {
 }
 
 .editors .editor {
-  flex-grow: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .editors .editor .text-area {
-  flex-grow: 1;
+  flex: 1;
   border-top-left-radius: 5px;
   border: 1px solid #1e1e1e;
 }
@@ -146,9 +146,9 @@ ul.tags>li:hover {
 }
 
 @media only screen and (max-width: 900px) {
-  /*.editors .editor:last-child {
+  .editors .editor:last-child {
     display: none;
-  }*/
+  }
 }
 
 @media only screen and (max-width: 768px) {
