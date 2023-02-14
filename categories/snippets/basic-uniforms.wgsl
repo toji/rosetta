@@ -26,37 +26,3 @@ fn transformPosition(postion : vec4f) -> vec4f {
 
   return modelViewProjectionMatrix * position;
 }
-
-//-----------------------
-// Textures and Samplers
-//-----------------------
-
-struct MaterialUniforms {
-  baseColorFactor : vec4f,
-};
-@group(2) @binding(0) var<uniform> material : MaterialUniforms;
-
-// Samplers are bound separately from textures.
-@group(2) @binding(1) var baseColorSampler : sampler;
-@group(2) @binding(2) var baseColorTexture : texture_2d<f32>;
-
-fn getBaseColor(texCoord : vec2f) -> vec4f {
-  // Textures are sampled with both the texture and sampler.
-  let baseColor = textureSample(baseColorTexture, baseColorSampler, texCoord);
-  return material.baseColorFactor * baseColor;
-}
-
-//-----------------------
-// Uniform Arrays
-//-----------------------
-
-struct PointLight {
-  position : vec3f,
-  color : vec3f,
-};
-
-struct LightUniforms {
-  ambientLight : vec3f,
-  pointLights : array<PointLight, 8>,
-};
-@group(0) @binding(1) var<uniform> light : LightUniforms;

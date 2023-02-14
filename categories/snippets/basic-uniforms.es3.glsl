@@ -26,37 +26,3 @@ vec4 transformPosition(vec4 postion) {
 
   return modelViewProjectionMatrix * position;
 }
-
-//-----------------------
-// Textures and Samplers
-//-----------------------
-
-layout(std140) uniform MaterialUniforms {
-  vec4 baseColorFactor;
-};
-
-// Even though textures and samplers are separate in WebGL 2/OpenGL ES 3, they
-// are associated in the application and still exposed to the shader as a single
-// sampler object.
-uniform sampler2D baseColorTexture;
-
-vec4 getBaseColor(vec2 texCoord) {
-  // The texture() function is used for sampling, which figures out the type of
-  // sample that's required based on the texture being passed.
-  vec4 baseColor = texture(baseColorTexture, texCoord);
-  return baseColorFactor * baseColor;
-}
-
-//-----------------------
-// Uniform Arrays
-//-----------------------
-
-struct PointLight {
-  vec4 position;
-  vec4 color;
-};
-
-layout(std140) uniform LightUniforms {
-  vec3 ambientLight;
-  PointLight pointLights[8];
-}
