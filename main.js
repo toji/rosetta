@@ -15,7 +15,8 @@ const app = createApp({
       filter: '',
       shaderList,
       selectedFile: shaderList.About.Welcome,
-      selectedExtension: 'md',
+      selectedExtension0: 'md',
+      selectedExtension1: 'md',
       code: '',
       navCollapsed: true,
     }
@@ -50,12 +51,20 @@ const app = createApp({
     }
   },
   methods: {
-    async displayShader(shaderFile, extension) {
+    async displayShader(shaderFile, extension, editorIndex) {
       this.selectedFile = shaderFile;
-      this.selectedExtension = extension;
-      this.navCollapsed = true;
 
-      loadShader(shaderFile.url, extension);
+      if (extension === undefined && editorIndex === undefined) {
+        for (let i = 0; i < editors.length; ++i) {
+          const ext = shaderFile.extensions[Math.min(i, shaderFile.extensions.length-1)];
+          this[`selectedExtension${i}`] = ext;
+          loadShader(shaderFile.url, ext, i);
+        }
+      } else {
+        this[`selectedExtension${editorIndex}`] = extension;
+        loadShader(shaderFile.url, extension, editorIndex);
+      }
+      this.navCollapsed = true;
     }
   }
 });
@@ -63,36 +72,28 @@ app.mount('#rosetta');
 
 // Initialize monaco editors
 const containers = document.querySelectorAll('.text-area');
-if (containers.length > 1) {
+/*if (containers.length > 1) {
   containers[1].classList.add('hidden');
-}
+}*/
 
 const editors = [];
 
-async function fetchForEditor(index, fileUrl, extension) {
+async function fetchShader(fileUrl, extension) {
   const result = await fetch(`${fileUrl}.${extension}`);
-  const text = await result.text();
-
-  const model = editors[index].getModel();
-  monaco.editor.setModelLanguage(model, EXTENSION_LANGUAGES[extension] ?? 'javascript');
-  editors[index].setValue(text);
+  return result.text();
 }
 
-async function loadShader(fileUrl, extension = undefined) {
-  fetchForEditor(0, fileUrl, extension);
+async function loadShader(fileUrl, extension, editorIndex) {
+  const text = await fetchShader(fileUrl, extension);
 
-  /*if (extensions.length > 1) {
-    containers[1].classList.remove('hidden');
-    fetchForEditor(1, shaderName, extensions[1]);
-  } else {
-    containers[1].classList.add('hidden');
-    editors[1].setValue('// No second language set');
-  }*/
+  const model = editors[editorIndex].getModel();
+  monaco.editor.setModelLanguage(model, EXTENSION_LANGUAGES[extension] ?? 'javascript');
+  editors[editorIndex].setValue(text);
 }
 
 for (const container of containers) {
   const editor = monaco.editor.create(container, {
-    value: 'Editor content',
+    value: 'No selection',
     language: 'markdown',
     readOnly: true,
     theme: 'vs-dark',
@@ -105,4 +106,4 @@ for (const container of containers) {
   editors.push(editor);
 }
 
-loadShader('./categories/about/welcome', 'md');
+loadShader('./categories/about/welcome', 'md', 0);

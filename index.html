@@ -44,7 +44,7 @@
           <hr/>
           <h2>{{category}}</h2>
           <ul class='shader-list'>
-            <li v-for='(file, name) in files' @click='displayShader(file, file.extensions[0])'>
+            <li v-for='(file, name) in files' @click='displayShader(file)'>
               <label>{{name}}</label>
               <ul class='tags' >
                 <li v-for='ext in file.extensions' @click.stop='displayShader(file, ext)'>{{ext}}</li>
@@ -59,9 +59,18 @@
         <div class='tabs'>
           <span class='filename'>{{selectedFile.name}}</span>
           <span class='tab'
-            :class="{ selected: extension == selectedExtension }"
+            :class="{ selected: extension == selectedExtension0 }"
             v-for='extension in selectedFile.extensions'
-            @click='displayShader(selectedFile, extension)'>{{extension}}</span>
+            @click='displayShader(selectedFile, extension, 0)'>{{extension}}</span>
+        </div>
+        <div class='text-area'></div>
+      </div>
+      <div class='editor'>
+        <div class='tabs'>
+          <span class='tab'
+            :class="{ selected: extension == selectedExtension1 }"
+            v-for='extension in selectedFile.extensions'
+            @click='displayShader(selectedFile, extension, 1)'>{{extension}}</span>
         </div>
         <div class='text-area'></div>
       </div>
