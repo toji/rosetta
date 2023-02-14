@@ -18,8 +18,12 @@ nav {
 
 nav .expand {
   display: none;
-  font-size: 0.8em;
   float: right;
+  width: 36px;
+  height: 36px;
+  margin-top: -0.25em;
+  background-image: url(./images/menu.svg);
+  background-size: cover;
 }
 
 nav>div {

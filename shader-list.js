@@ -34,21 +34,30 @@ export const shaderList = {
     }
   },
   "Snippets": {
+    "Basic Textures": {
+      "name": "Basic Textures",
+      "url": "./categories/snippets/basic-textures",
+      "extensions": [
+        "wgsl",
+        "glsl",
+        "es3.glsl"
+      ]
+    },
+    "Basic Uniforms": {
+      "name": "Basic Uniforms",
+      "url": "./categories/snippets/basic-uniforms",
+      "extensions": [
+        "wgsl",
+        "glsl",
+        "es3.glsl"
+      ]
+    },
     "Linear To Srgb": {
       "name": "Linear To Srgb",
       "url": "./categories/snippets/linear-to-srgb",
       "extensions": [
         "wgsl",
         "glsl"
-      ]
-    },
-    "Uniforms And Textures": {
-      "name": "Uniforms And Textures",
-      "url": "./categories/snippets/uniforms-and-textures",
-      "extensions": [
-        "wgsl",
-        "glsl",
-        "es3.glsl"
       ]
     }
   }
