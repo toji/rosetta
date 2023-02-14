@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'>
+    <meta name='mobile-web-app-capable' content='yes'>
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>Shader Compare</title>
+
+    <!-- Monaco editor resources -->
+    <link
+      rel="stylesheet"
+      data-name="vs/editor/editor.main"
+      href="./node_modules/monaco-editor/min/vs/editor/editor.main.css"
+    />
+
+    <script>
+			var require = { paths: { vs: './node_modules/monaco-editor/min/vs' } };
+		</script>
+		<script src="./node_modules/monaco-editor/min/vs/loader.js"></script>
+		<script src="./node_modules/monaco-editor/min/vs/editor/editor.main.nls.js"></script>
+		<script src="./node_modules/monaco-editor/min/vs/editor/editor.main.js"></script>
+
+    <!-- Page resources -->
+    <link rel="stylesheet" href="main.css"/>
+    <script type='module' src='main.js'></script>
+  </head>
+
+  <body id='rosetta'>
+    <nav :class="{ collapsed: navCollapsed }">
+      <h1>
+        Shader Comparisons
+        <div class='expand' @click='navCollapsed = !navCollapsed'>Expand</div>
+      </h1>
+      <div>
+        <input type='text' v-model="filter" placeholder="Filter..."></input>
+      </div>
+      <div class='nav-menu'>
+        <div v-for='(files, category) in filteredShaderList'>
+          <hr/>
+          <h2>{{category}}</h2>
+          <ul class='shader-list'>
+            <li v-for='(file, name) in files' @click='displayShader(file, file.extensions[0])'>
+              <label>{{name}}</label>
+              <ul class='tags' >
+                <li v-for='ext in file.extensions' @click.stop='displayShader(file, ext)'>{{ext}}</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class='editors'>
+      <div class='editor'>
+        <div class='tabs'>
+          <span class='filename'>{{selectedFile.name}}</span>
+          <span class='tab'
+            :class="{ selected: extension == selectedExtension }"
+            v-for='extension in selectedFile.extensions'
+            @click='displayShader(selectedFile, extension)'>{{extension}}</span>
+        </div>
+        <div class='text-area'></div>
+      </div>
+    </div>
+  </body>
+</html>
