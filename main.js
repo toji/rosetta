@@ -54,9 +54,14 @@ const app = createApp({
     async displayShader(shaderFile, extension, editorIndex) {
       this.selectedFile = shaderFile;
 
-      if (extension === undefined && editorIndex === undefined) {
+      if (extension === undefined) {
+        extension = shaderFile.extensions[0];
+      }
+
+      if (editorIndex === undefined) {
+        const extensionIndex = shaderFile.extensions.indexOf(extension);
         for (let i = 0; i < editors.length; ++i) {
-          const ext = shaderFile.extensions[Math.min(i, shaderFile.extensions.length-1)];
+          const ext = shaderFile.extensions[(extensionIndex + i) % shaderFile.extensions.length];
           this[`selectedExtension${i}`] = ext;
           loadShader(shaderFile.url, ext, i);
         }
