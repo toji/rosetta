@@ -73,6 +73,10 @@ ul.shader-list>li:hover {
   background: #dadada;
 }
 
+ul.shader-list>li.selected {
+  background: #bababa;
+}
+
 ul.shader-list label {
   display: block;
   cursor: pointer;

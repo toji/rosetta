@@ -14,7 +14,7 @@ const app = createApp({
     return {
       filter: '',
       shaderList,
-      selectedFile: shaderList.About.Welcome,
+      selectedFile: shaderList[''].README,
       selectedExtension0: 'md',
       selectedExtension1: 'md',
       code: '',
@@ -111,4 +111,4 @@ for (const container of containers) {
   editors.push(editor);
 }
 
-loadShader('./categories/about/welcome', 'md', 0);
+loadShader('./README', 'md', 0);
