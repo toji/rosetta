@@ -68,6 +68,15 @@ export const shaderList = {
         "glsl",
         "es3.glsl"
       ]
+    },
+    "textured-geometry": {
+      "name": "Textured Geometry",
+      "url": "shaders/rendering/textured-geometry",
+      "extensions": [
+        "wgsl",
+        "glsl",
+        "es3.glsl"
+      ]
     }
   }
 };
