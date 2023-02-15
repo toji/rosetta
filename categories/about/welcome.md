@@ -1,4 +1,4 @@
-# Shader Comparisons
+# Rosetta
 
 ## Welcome!
 This page allows you to compare shader snippets from multiple different shading
