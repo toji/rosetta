@@ -44,8 +44,11 @@
           <hr/>
           <h2>{{category}}</h2>
           <ul class='shader-list'>
-            <li v-for='(file, name) in files' @click='displayShader(file)'>
-              <label>{{name}}</label>
+            <li class='shader'
+                :class='{ selected: file == selectedFile }'
+                v-for='file in files'
+                @click='displayShader(file)'>
+              <label>{{file.name}}</label>
               <ul class='tags' >
                 <li v-for='ext in file.extensions' @click.stop='displayShader(file, ext)'>{{ext}}</li>
               </ul>
