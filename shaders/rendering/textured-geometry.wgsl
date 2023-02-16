@@ -19,6 +19,9 @@ struct VertexOutput {
   @location(0) texcoord : vec2f,
 };
 
+// The vertex shader transforms the geometry positions by the
+// model/view/projection matrices, and passes the texture coordinate along
+// unchanged
 @vertex
 fn vertexMain(input : VertexInput) -> VertexOutput {
   var output : VertexOutput;
@@ -32,6 +35,8 @@ fn vertexMain(input : VertexInput) -> VertexOutput {
 @group(2) @binding(0) var baseColorSampler : sampler;
 @group(2) @binding(1) var baseColorTexture : texture_2d<f32>;
 
+// The fragment shader returns the texture color at the texture coordinate
+// passed from the vertex shader.
 @fragment
 fn fragmentMain(input : VertexOutput) -> @location(0) vec4f {
   return textureSample(baseColorTexture, baseColorSampler, input.texcoord);

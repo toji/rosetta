@@ -15,6 +15,7 @@ const shaderList = {};
 function formatName(name) {
   const parts = name.split('-');
   for (let i = 0; i < parts.length; ++i) {
+    if (!parts[i].length) { continue; }
     parts[i] = parts[i][0].toUpperCase() + parts[i].substr(1);
   }
   return parts.join(' ');
@@ -37,7 +38,7 @@ function matchFiles(baseFolder, extensions, recurse = true) {
     }
 
     matches.push({
-      folder: baseFolder.replace('./', ''),
+      folder: baseFolder,
       name: file,
     });
   });
@@ -47,7 +48,13 @@ function matchFiles(baseFolder, extensions, recurse = true) {
 
 const folderFiles = {};
 function processFile(file) {
-  const formattedFolder = file.folder.replace('.', '');
+  const formattedFolder = formatName(
+    file.folder
+      .replace(shaderFolder, '')
+      .replace('.', '')
+      .replace('/', ' ')
+      .trim()
+  );
 
   if (!folderFiles[formattedFolder]) {
     folderFiles[formattedFolder] = {};
