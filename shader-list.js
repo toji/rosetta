@@ -27,10 +27,10 @@ export const shaderList = {
       ]
     }
   },
-  "shaders/basics": {
+  "Basics": {
     "basic-textures": {
       "name": "Basic Textures",
-      "url": "shaders/basics/basic-textures",
+      "url": "./shaders/basics/basic-textures",
       "extensions": [
         "wgsl",
         "glsl",
@@ -39,41 +39,38 @@ export const shaderList = {
     },
     "basic-uniforms": {
       "name": "Basic Uniforms",
-      "url": "shaders/basics/basic-uniforms",
+      "url": "./shaders/basics/basic-uniforms",
       "extensions": [
         "wgsl",
         "glsl",
         "es3.glsl"
       ]
+    },
+    "basic-variables": {
+      "name": "Basic Variables",
+      "url": "./shaders/basics/basic-variables",
+      "extensions": [
+        "wgsl"
+      ]
     }
   },
-  "shaders/misc": {
+  "Misc": {
     "linear-to-srgb": {
       "name": "Linear To Srgb",
-      "url": "shaders/misc/linear-to-srgb",
+      "url": "./shaders/misc/linear-to-srgb",
       "extensions": [
         "wgsl",
         "glsl"
       ]
     }
   },
-  "shaders/rendering": {
-    "solid-color": {
-      "name": "Solid Color",
-      "url": "shaders/rendering/solid-color",
-      "extensions": [
-        "wgsl",
-        "msl",
-        "hlsl",
-        "glsl",
-        "es3.glsl"
-      ]
-    },
+  "Rendering": {
     "textured-geometry": {
       "name": "Textured Geometry",
-      "url": "shaders/rendering/textured-geometry",
+      "url": "./shaders/rendering/textured-geometry",
       "extensions": [
         "wgsl",
+        "hlsl",
         "glsl",
         "es3.glsl"
       ]
