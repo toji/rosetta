@@ -65,6 +65,14 @@ export const shaderList = {
     }
   },
   "Rendering": {
+    "point-lit-geometry": {
+      "name": "Point Lit Geometry",
+      "url": "./shaders/rendering/point-lit-geometry",
+      "extensions": [
+        "wgsl",
+        "es3.glsl"
+      ]
+    },
     "textured-geometry": {
       "name": "Textured Geometry",
       "url": "./shaders/rendering/textured-geometry",
