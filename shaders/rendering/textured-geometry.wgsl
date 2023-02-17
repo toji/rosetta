@@ -1,6 +1,6 @@
 //-----------------------
 // Textured Geometry
-//-----------------------
+//----------------------- 
 
 struct Camera {
   projection : mat4x4f,
