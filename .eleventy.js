@@ -30,7 +30,7 @@ module.exports = function(eleventyConfig) {
   return {
     dir: {
       input: "page",
-      output: "_site",
+      output: "docs", // Because Github only serves from root or /docs
     }
   }
 };
