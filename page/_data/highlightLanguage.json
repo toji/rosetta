@@ -1,0 +1,8 @@
+{
+  "es3.glsl": "glsl",
+  "glsl": "glsl",
+  "wgsl": "wgsl",
+  "hlsl": "hlsl",
+  "msl": "cpp",
+  "md": "md"
+}

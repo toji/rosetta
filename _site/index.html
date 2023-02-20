@@ -1,0 +1,163 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rosetta</title>
+
+    <link rel="stylesheet" href="assets/main.css"/>
+  </head>
+  <body>
+    <nav>
+      <h1>
+        Rosetta
+        <div class='expand' onclick='toggleNav()'></div>
+      </h1>
+      <div>
+        <input id='filter' type='text' placeholder="Filter..."></input>
+      </div>
+      <div class='nav-menu'>
+        
+        <div>
+          <hr/>
+          <h2></h2>
+          <ul class='shader-list'>
+            
+            <li class='shader' onclick='loadShader("./CONTRIBUTING")'>
+              <label>CONTRIBUTING</label>
+              <ul class='tags' >
+                
+                <li>md</li>
+                
+              </ul>
+            </li>
+            
+            <li class='shader' onclick='loadShader("./LICENSE")'>
+              <label>LICENSE</label>
+              <ul class='tags' >
+                
+                <li>md</li>
+                
+              </ul>
+            </li>
+            
+            <li class='shader' onclick='loadShader("./README")'>
+              <label>README</label>
+              <ul class='tags' >
+                
+                <li>md</li>
+                
+              </ul>
+            </li>
+            
+          </ul>
+        </div>
+        
+        <div>
+          <hr/>
+          <h2>Basics</h2>
+          <ul class='shader-list'>
+            
+            <li class='shader' onclick='loadShader("./shaders/basics/basic-textures")'>
+              <label>Basic Textures</label>
+              <ul class='tags' >
+                
+                <li>wgsl</li>
+                
+                <li>glsl</li>
+                
+                <li>es3.glsl</li>
+                
+              </ul>
+            </li>
+            
+            <li class='shader' onclick='loadShader("./shaders/basics/basic-uniforms")'>
+              <label>Basic Uniforms</label>
+              <ul class='tags' >
+                
+                <li>wgsl</li>
+                
+                <li>glsl</li>
+                
+                <li>es3.glsl</li>
+                
+              </ul>
+            </li>
+            
+            <li class='shader' onclick='loadShader("./shaders/basics/basic-variables")'>
+              <label>Basic Variables</label>
+              <ul class='tags' >
+                
+                <li>wgsl</li>
+                
+              </ul>
+            </li>
+            
+          </ul>
+        </div>
+        
+        <div>
+          <hr/>
+          <h2>Misc</h2>
+          <ul class='shader-list'>
+            
+            <li class='shader' onclick='loadShader("./shaders/misc/linear-to-srgb")'>
+              <label>Linear To Srgb</label>
+              <ul class='tags' >
+                
+                <li>wgsl</li>
+                
+                <li>glsl</li>
+                
+              </ul>
+            </li>
+            
+          </ul>
+        </div>
+        
+        <div>
+          <hr/>
+          <h2>Rendering</h2>
+          <ul class='shader-list'>
+            
+            <li class='shader' onclick='loadShader("./shaders/rendering/point-lit-geometry")'>
+              <label>Point Lit Geometry</label>
+              <ul class='tags' >
+                
+                <li>wgsl</li>
+                
+                <li>es3.glsl</li>
+                
+              </ul>
+            </li>
+            
+            <li class='shader' onclick='loadShader("./shaders/rendering/textured-geometry")'>
+              <label>Textured Geometry</label>
+              <ul class='tags' >
+                
+                <li>wgsl</li>
+                
+                <li>hlsl</li>
+                
+                <li>glsl</li>
+                
+                <li>es3.glsl</li>
+                
+              </ul>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+    <div class='editors'>
+      <iframe class='editor' src='./README.html'></iframe>
+      <iframe class='editor' src='./LICENSE.html'></iframe>
+    </div>
+
+    <script src='assets/main.js'></script>
+  </body>
+</html>

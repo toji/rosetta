@@ -1,0 +1,238 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  font-family: "Montserrat",sans-serif;
+  background-color: #fafafa;
+}
+
+/*
+Nav Bar
+*/
+
+nav {
+  height: 100%;
+  width: 300px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+nav .expand {
+  display: none;
+  float: right;
+  width: 36px;
+  height: 36px;
+  margin-top: -0.25em;
+  background-image: url(./menu.svg);
+  background-size: cover;
+}
+
+nav>div {
+  margin: 0;
+  padding: 0 1em;
+}
+
+nav h1 {
+  margin: 0px;
+  padding: 0.5em 1em;
+}
+
+nav h2 {
+  margin: 0px;
+  padding: 0.5em 0;
+  font-size: 1.1em;
+}
+
+nav .nav-menu {
+  flex: 1;
+  margin: 0;
+  margin-top: 0.5em;
+  padding: 0 1em;
+  overflow-y: auto;
+}
+
+nav input {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 0.5em;
+  padding: 0.2em 0.5em;
+}
+
+ul.shader-list {
+  padding: 0 0.5em;
+  margin-top: 0;
+}
+
+ul.shader-list>li {
+  list-style: none;
+  padding: 0.3em 0;
+  cursor: pointer;
+}
+
+ul.shader-list>li:hover {
+  background: #dadada;
+}
+
+ul.shader-list>li.selected {
+  background: #bababa;
+}
+
+ul.shader-list label {
+  display: block;
+  cursor: pointer;
+}
+
+.shader.hidden {
+  display: none;
+}
+
+ul.tags {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+ul.tags>li {
+  display: inline-block;
+  list-style: none;
+  border: 1px solid grey;
+  border-radius: 3px;
+  font-size: 0.8em;
+  margin-right: 0.4em;
+  padding: 1px 3px;
+}
+
+ul.tags>li:hover {
+  background-color: #bababa;
+}
+
+/*
+Text Areas
+*/
+
+.editors {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 0px;
+  margin: 0px;
+  margin-right: 0.5em;
+  padding: 0px;
+}
+
+.content pre {
+  height: 100%;
+  width: auto;
+  overflow-x: auto;
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.editors .editor.hidden {
+  display: none;
+}
+
+/*
+Tabs
+*/
+
+.tabbed-content {
+  height: 100%;
+}
+
+.tabbed-content [type="radio"] {
+	/* hiding the inputs */
+	display: none;
+}
+
+.tabs {
+	display: flex;
+	align-items: stretch;
+	list-style: none;
+	padding: 0;
+	border-bottom: 1px solid grey;
+  position: relative;
+  min-height: 200px;
+  height: calc(100% - 60px);
+  padding-left: 0.5em;
+}
+.tab > label {
+	display: inline-block;
+	margin-bottom: -1px;
+	padding: 0.5em;
+	border: 1px solid grey;
+  border-radius: 5px 5px 0 0;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.tab:hover label {
+  border-top-color: 1px solid grey;
+	background-color: #dadada;
+	color: #333;
+}
+
+.tabs .content {
+  display: none;
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.tab [type="radio"]:checked ~ label {
+	border-bottom-color: #272822;
+	background: #272822;
+	color: #ddd;
+}
+
+.tab [type="radio"]:checked ~ .content {
+	display: block;
+}
+
+@media only screen and (max-width: 900px) {
+  .editors .editor:last-child {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  nav {
+    width: 100%;
+    height: auto;
+  }
+
+  nav .expand {
+    display: block;
+  }
+
+  nav.collapsed>div {
+    display: none;
+  }
+
+  .editor {
+    margin: 0;
+  }
+
+  .tabs .content {
+    top: 32px;
+  }
+
+  .tabs {
+    height: calc(100% - 45px);
+  }
+}
