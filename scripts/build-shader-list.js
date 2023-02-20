@@ -71,6 +71,7 @@ module.exports = function buildShaderList() {
       const newFile = {
         name: formatName(filename),
         url: `${file.folder}/${filename}`,
+        outName: `${file.folder}/${filename}`.replaceAll('./shaders/', '').replaceAll('./', '').replaceAll('/', '-'),
         extensions: []
       };
       files[filename] = newFile;

@@ -4,6 +4,7 @@
       "CONTRIBUTING": {
         "name": "CONTRIBUTING",
         "url": "./CONTRIBUTING",
+        "outName": "CONTRIBUTING",
         "extensions": [
           "md"
         ]
@@ -11,6 +12,7 @@
       "LICENSE": {
         "name": "LICENSE",
         "url": "./LICENSE",
+        "outName": "LICENSE",
         "extensions": [
           "md"
         ]
@@ -18,6 +20,7 @@
       "README": {
         "name": "README",
         "url": "./README",
+        "outName": "README",
         "extensions": [
           "md"
         ]
@@ -27,6 +30,7 @@
       "basic-textures": {
         "name": "Basic Textures",
         "url": "./shaders/basics/basic-textures",
+        "outName": "basics-basic-textures",
         "extensions": [
           "wgsl",
           "glsl",
@@ -36,6 +40,7 @@
       "basic-uniforms": {
         "name": "Basic Uniforms",
         "url": "./shaders/basics/basic-uniforms",
+        "outName": "basics-basic-uniforms",
         "extensions": [
           "wgsl",
           "glsl",
@@ -45,6 +50,7 @@
       "basic-variables": {
         "name": "Basic Variables",
         "url": "./shaders/basics/basic-variables",
+        "outName": "basics-basic-variables",
         "extensions": [
           "wgsl"
         ]
@@ -54,6 +60,7 @@
       "linear-to-srgb": {
         "name": "Linear To Srgb",
         "url": "./shaders/misc/linear-to-srgb",
+        "outName": "misc-linear-to-srgb",
         "extensions": [
           "wgsl",
           "glsl"
@@ -64,6 +71,7 @@
       "point-lit-geometry": {
         "name": "Point Lit Geometry",
         "url": "./shaders/rendering/point-lit-geometry",
+        "outName": "rendering-point-lit-geometry",
         "extensions": [
           "wgsl",
           "es3.glsl"
@@ -72,6 +80,7 @@
       "textured-geometry": {
         "name": "Textured Geometry",
         "url": "./shaders/rendering/textured-geometry",
+        "outName": "rendering-textured-geometry",
         "extensions": [
           "wgsl",
           "hlsl",
@@ -85,6 +94,7 @@
     {
       "name": "CONTRIBUTING",
       "url": "./CONTRIBUTING",
+      "outName": "CONTRIBUTING",
       "extensions": [
         "md"
       ]
@@ -92,6 +102,7 @@
     {
       "name": "LICENSE",
       "url": "./LICENSE",
+      "outName": "LICENSE",
       "extensions": [
         "md"
       ]
@@ -99,6 +110,7 @@
     {
       "name": "README",
       "url": "./README",
+      "outName": "README",
       "extensions": [
         "md"
       ]
@@ -106,6 +118,7 @@
     {
       "name": "Basic Textures",
       "url": "./shaders/basics/basic-textures",
+      "outName": "basics-basic-textures",
       "extensions": [
         "wgsl",
         "glsl",
@@ -115,6 +128,7 @@
     {
       "name": "Basic Uniforms",
       "url": "./shaders/basics/basic-uniforms",
+      "outName": "basics-basic-uniforms",
       "extensions": [
         "wgsl",
         "glsl",
@@ -124,6 +138,7 @@
     {
       "name": "Basic Variables",
       "url": "./shaders/basics/basic-variables",
+      "outName": "basics-basic-variables",
       "extensions": [
         "wgsl"
       ]
@@ -131,6 +146,7 @@
     {
       "name": "Linear To Srgb",
       "url": "./shaders/misc/linear-to-srgb",
+      "outName": "misc-linear-to-srgb",
       "extensions": [
         "wgsl",
         "glsl"
@@ -139,6 +155,7 @@
     {
       "name": "Point Lit Geometry",
       "url": "./shaders/rendering/point-lit-geometry",
+      "outName": "rendering-point-lit-geometry",
       "extensions": [
         "wgsl",
         "es3.glsl"
@@ -147,6 +164,7 @@
     {
       "name": "Textured Geometry",
       "url": "./shaders/rendering/textured-geometry",
+      "outName": "rendering-textured-geometry",
       "extensions": [
         "wgsl",
         "hlsl",

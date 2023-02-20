@@ -28,7 +28,7 @@ title: Rosetta
           <h2>{{category}}</h2>
           <ul class='shader-list'>
             {% for filename, file in files %}
-            <li class='shader' onclick='loadShader("{{file.url}}")'>
+            <li class='shader' onclick='loadShader("shaders/{{file.outName}}")'>
               <label>{{file.name}}</label>
               <ul class='tags' >
                 {% for ext in file.extensions %}
@@ -43,8 +43,8 @@ title: Rosetta
       </div>
     </nav>
     <div class='editors'>
-      <iframe class='editor' src='./README.html'></iframe>
-      <iframe class='editor' src='./LICENSE.html'></iframe>
+      <iframe class='editor' src='shaders/README.html'></iframe>
+      <iframe class='editor' src='shaders/LICENSE.html'></iframe>
     </div>
 
     <script src='assets/main.js'></script>
