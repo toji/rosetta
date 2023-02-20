@@ -38,4 +38,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           email: tojiro@gmail.com
-          build_dir: .
+          build_dir: _site
+          jekyll: no
