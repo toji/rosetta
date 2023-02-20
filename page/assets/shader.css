@@ -1,0 +1,74 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: "Montserrat",sans-serif;
+  background-color: #fafafa;
+}
+
+/*
+Tabs
+*/
+
+.tabbed-content {
+  height: 100%;
+}
+
+.tabbed-content [type="radio"] {
+	/* hiding the inputs */
+	display: none;
+}
+
+.tabs {
+	display: flex;
+	align-items: stretch;
+	list-style: none;
+	padding: 0;
+	border-bottom: 1px solid grey;
+  position: relative;
+  min-height: 200px;
+  height: calc(100% - 40px);
+  padding-left: 0.5em;
+  padding-top: 5px;
+}
+.tab > label {
+	display: inline-block;
+	margin-bottom: -1px;
+	padding: 0.5em;
+	border: 1px solid grey;
+  border-radius: 5px 5px 0 0;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.tab:hover label {
+  border-top-color: 1px solid grey;
+	background-color: #dadada;
+	color: #333;
+}
+
+.tabs .content {
+  display: none;
+  position: absolute;
+  top: 36px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.tab [type="radio"]:checked ~ label {
+	border-bottom-color: #272822;
+	background: #272822;
+	color: #ddd;
+}
+
+.tab [type="radio"]:checked ~ .content {
+	display: block;
+}
+
+.content pre {
+  height: 100%;
+  width: auto;
+  overflow-x: auto;
+  margin: 0;
+  font-size: 0.9em;
+}
