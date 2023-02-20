@@ -130,74 +130,8 @@ Text Areas
   padding: 0px;
 }
 
-.content pre {
-  height: 100%;
-  width: auto;
-  overflow-x: auto;
-  margin: 0;
-  font-size: 0.9em;
-}
-
 .editors .editor.hidden {
   display: none;
-}
-
-/*
-Tabs
-*/
-
-.tabbed-content {
-  height: 100%;
-}
-
-.tabbed-content [type="radio"] {
-	/* hiding the inputs */
-	display: none;
-}
-
-.tabs {
-	display: flex;
-	align-items: stretch;
-	list-style: none;
-	padding: 0;
-	border-bottom: 1px solid grey;
-  position: relative;
-  min-height: 200px;
-  height: calc(100% - 60px);
-  padding-left: 0.5em;
-}
-.tab > label {
-	display: inline-block;
-	margin-bottom: -1px;
-	padding: 0.5em;
-	border: 1px solid grey;
-  border-radius: 5px 5px 0 0;
-	cursor: pointer;
-	transition: all 0.3s;
-}
-.tab:hover label {
-  border-top-color: 1px solid grey;
-	background-color: #dadada;
-	color: #333;
-}
-
-.tabs .content {
-  display: none;
-  position: absolute;
-  top: 28px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.tab [type="radio"]:checked ~ label {
-	border-bottom-color: #272822;
-	background: #272822;
-	color: #ddd;
-}
-
-.tab [type="radio"]:checked ~ .content {
-	display: block;
 }
 
 @media only screen and (max-width: 900px) {
@@ -226,13 +160,5 @@ Tabs
 
   .editor {
     margin: 0;
-  }
-
-  .tabs .content {
-    top: 32px;
-  }
-
-  .tabs {
-    height: calc(100% - 45px);
   }
 }
