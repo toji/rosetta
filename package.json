@@ -1,15 +1,17 @@
 {
   "name": "rosetta",
   "version": "0.0.1",
-  "description": "Side by side comparisons of shading language snippets",
-  "main": "main.js",
+  "description": "A shader reference resource comparing shaders from multiple languages",
   "scripts": {
-    "buildShaderList": "node ./scripts/build-shader-list.js"
+    "build": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve --port=8081",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Brandon Jones",
+  "keywords": ["webgpu", "webgl", "shaders"],
+  "author": "bajones@google.com",
   "license": "MIT",
-  "dependencies": {
-    "monaco-editor": "^0.35.0",
-    "vue": "^3.2.47"
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0"
   }
 }

@@ -8,6 +8,10 @@ html, body {
   background-color: #fafafa;
 }
 
+/*
+Nav Bar
+*/
+
 nav {
   height: 100%;
   width: 300px;
@@ -22,7 +26,7 @@ nav .expand {
   width: 36px;
   height: 36px;
   margin-top: -0.25em;
-  background-image: url(./images/menu.svg);
+  background-image: url(./menu.svg);
   background-size: cover;
 }
 
@@ -82,6 +86,10 @@ ul.shader-list label {
   cursor: pointer;
 }
 
+.shader.hidden {
+  display: none;
+}
+
 ul.tags {
   padding: 0;
   display: flex;
@@ -102,55 +110,94 @@ ul.tags>li:hover {
   background-color: #bababa;
 }
 
+/*
+Text Areas
+*/
+
 .editors {
   flex-grow: 1;
   display: flex;
   flex-direction: row;
 }
 
-.editors .editor {
+.editor {
   flex: 1;
   display: flex;
   flex-direction: column;
+  border: 0px;
+  margin: 0px;
+  margin-right: 0.5em;
+  padding: 0px;
 }
 
-.editors .editor .text-area {
-  flex: 1;
-  border-top-left-radius: 5px;
-  border: 1px solid #1e1e1e;
+.content pre {
+  height: 100%;
+  width: auto;
+  overflow-x: auto;
+  margin: 0;
+  font-size: 0.9em;
 }
 
 .editors .editor.hidden {
   display: none;
 }
 
-.editors .editor .tabs {
-  margin-left: 5px;
+/*
+Tabs
+*/
+
+.tabbed-content {
+  height: 100%;
 }
 
-.editors .editor .tabs .tab {
-  cursor: pointer;
-  display: inline-block;
-  border: 1px solid grey;
+.tabbed-content [type="radio"] {
+	/* hiding the inputs */
+	display: none;
+}
+
+.tabs {
+	display: flex;
+	align-items: stretch;
+	list-style: none;
+	padding: 0;
+	border-bottom: 1px solid grey;
+  position: relative;
+  min-height: 200px;
+  height: calc(100% - 60px);
+  padding-left: 0.5em;
+}
+.tab > label {
+	display: inline-block;
+	margin-bottom: -1px;
+	padding: 0.5em;
+	border: 1px solid grey;
   border-radius: 5px 5px 0 0;
-  margin-top: 5px;
-  padding: 0.5em;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.tab:hover label {
+  border-top-color: 1px solid grey;
+	background-color: #dadada;
+	color: #333;
 }
 
-.editors .editor .tabs .filename {
-  display: block;
-  float: right;
-  margin: 0.7em;
+.tabs .content {
+  display: none;
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
-.editors .editor .tabs .tab:hover {
-  background-color: #dadada;
+.tab [type="radio"]:checked ~ label {
+	border-bottom-color: #272822;
+	background: #272822;
+	color: #ddd;
 }
 
-.editors .editor .tabs .tab.selected {
-  color: #cccccc;
-  border-bottom-color: #1e1e1e;
-  background-color: #1e1e1e;
+.tab [type="radio"]:checked ~ .content {
+	display: block;
 }
 
 @media only screen and (max-width: 900px) {
@@ -175,5 +222,17 @@ ul.tags>li:hover {
 
   nav.collapsed>div {
     display: none;
+  }
+
+  .editor {
+    margin: 0;
+  }
+
+  .tabs .content {
+    top: 32px;
+  }
+
+  .tabs {
+    height: calc(100% - 45px);
   }
 }

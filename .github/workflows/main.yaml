@@ -1,6 +1,6 @@
 name: Checkout dependencies and deploy
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
@@ -28,9 +28,9 @@ jobs:
       - name: Install 🔧
         run: npm install
 
-      # Rebuild the shader list
-      - name: Rebuild Shader List 📃
-        run: npm run buildShaderList
+      # Rebuild the 11ty pages
+      - name: Build the page 📃
+        run: npm run build
 
       - name: Deploy 🚀
         uses: Cecilapp/GitHub-Pages-deploy@3.2.0
@@ -39,4 +39,3 @@ jobs:
         with:
           email: tojiro@gmail.com
           build_dir: .
-          
