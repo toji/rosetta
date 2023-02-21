@@ -41,6 +41,9 @@ struct PointLight {
   intensity : f32;
 };
 
+// Arrays are allowed to be "runtime-sized" if they're the last element in a
+// storage struct, so we don't have to put a cap on the maximum number of lights
+// here.
 struct LightUniforms {
   ambient : vec3f;
   pointCount : u32;

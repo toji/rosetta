@@ -22,11 +22,11 @@ permalink: "shaders/{{ shader.outName }}.html"
         {% for ext in shader.extensions %}
         <li class='tab'>
           {% if loop.first == true %}
-          <input type='radio' id='shader-{{ext}}' name='shader-tabs' checked>
+          <input type='radio' id='{{ext}}' name='shader-tabs' checked>
           {% else %}
-          <input type='radio' id='shader-{{ext}}' name='shader-tabs'>
+          <input type='radio' id='{{ext}}' name='shader-tabs'>
           {% endif %}
-          <label for='shader-{{ext}}'>{{ext}}</label>
+          <label for='{{ext}}'>{{ext}}</label>
           <div class='content'>
             {% highlight highlightLanguage[ext] %}
             {% include '../../' + shader.url + '.' + ext %}
@@ -36,5 +36,7 @@ permalink: "shaders/{{ shader.outName }}.html"
         {% endfor %}
       </ul>
     </div>
+
+    <script type='module' src='../assets/shader.js'></script>
   </body>
 </html>

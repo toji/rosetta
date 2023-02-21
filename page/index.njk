@@ -16,7 +16,7 @@ title: Rosetta
     <nav>
       <h1>
         {{title}}
-        <div class='expand' onclick='toggleNav()'></div>
+        <div id='expand'></div>
       </h1>
       <div>
         <input id='filter' type='text' placeholder="Filter..."></input>
@@ -28,7 +28,7 @@ title: Rosetta
           <h2>{{category}}</h2>
           <ul class='shader-list'>
             {% for filename, file in files %}
-            <li class='shader' onclick='loadShader("shaders/{{file.outName}}")'>
+            <li class='shader' data-shader-name='{{file.outName}}'>
               <label>{{file.name}}</label>
               <ul class='tags' >
                 {% for ext in file.extensions %}
@@ -44,9 +44,9 @@ title: Rosetta
     </nav>
     <div class='editors'>
       <iframe class='editor' src='shaders/README.html'></iframe>
-      <iframe class='editor' src='shaders/LICENSE.html'></iframe>
+      <iframe class='editor hidden'></iframe>
     </div>
 
-    <script src='assets/main.js'></script>
+    <script type='module' src='assets/main.js'></script>
   </body>
 </html>

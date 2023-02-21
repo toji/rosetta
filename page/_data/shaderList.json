@@ -68,6 +68,15 @@
       }
     },
     "Rendering": {
+      "fullscreen-quad": {
+        "name": "Fullscreen Quad",
+        "url": "./shaders/rendering/fullscreen-quad",
+        "outName": "rendering-fullscreen-quad",
+        "extensions": [
+          "wgsl",
+          "es3.glsl"
+        ]
+      },
       "point-lit-geometry": {
         "name": "Point Lit Geometry",
         "url": "./shaders/rendering/point-lit-geometry",
@@ -150,6 +159,15 @@
       "extensions": [
         "wgsl",
         "glsl"
+      ]
+    },
+    {
+      "name": "Fullscreen Quad",
+      "url": "./shaders/rendering/fullscreen-quad",
+      "outName": "rendering-fullscreen-quad",
+      "extensions": [
+        "wgsl",
+        "es3.glsl"
       ]
     },
     {

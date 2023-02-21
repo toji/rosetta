@@ -8,6 +8,10 @@ html, body {
   background-color: #fafafa;
 }
 
+.hidden {
+  display: none;
+}
+
 /*
 Nav Bar
 */
@@ -20,7 +24,7 @@ nav {
   flex-direction: column;
 }
 
-nav .expand {
+nav #expand {
   display: none;
   float: right;
   width: 36px;
@@ -86,10 +90,6 @@ ul.shader-list label {
   cursor: pointer;
 }
 
-.shader.hidden {
-  display: none;
-}
-
 ul.tags {
   padding: 0;
   display: flex;
@@ -134,7 +134,7 @@ Text Areas
   display: none;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1024px) {
   .editors .editor:last-child {
     display: none;
   }
@@ -150,7 +150,7 @@ Text Areas
     height: auto;
   }
 
-  nav .expand {
+  nav #expand {
     display: block;
   }
 
