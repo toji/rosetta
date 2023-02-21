@@ -13,7 +13,7 @@
     <nav>
       <h1>
         Rosetta
-        <div class='expand' onclick='toggleNav()'></div>
+        <div id='expand'></div>
       </h1>
       <div>
         <input id='filter' type='text' placeholder="Filter..."></input>
@@ -25,7 +25,7 @@
           <h2></h2>
           <ul class='shader-list'>
             
-            <li class='shader' onclick='loadShader("shaders/CONTRIBUTING")'>
+            <li class='shader' data-shader-name='CONTRIBUTING'>
               <label>CONTRIBUTING</label>
               <ul class='tags' >
                 
@@ -34,7 +34,7 @@
               </ul>
             </li>
             
-            <li class='shader' onclick='loadShader("shaders/LICENSE")'>
+            <li class='shader' data-shader-name='LICENSE'>
               <label>LICENSE</label>
               <ul class='tags' >
                 
@@ -43,7 +43,7 @@
               </ul>
             </li>
             
-            <li class='shader' onclick='loadShader("shaders/README")'>
+            <li class='shader' data-shader-name='README'>
               <label>README</label>
               <ul class='tags' >
                 
@@ -60,7 +60,7 @@
           <h2>Basics</h2>
           <ul class='shader-list'>
             
-            <li class='shader' onclick='loadShader("shaders/basics-basic-textures")'>
+            <li class='shader' data-shader-name='basics-basic-textures'>
               <label>Basic Textures</label>
               <ul class='tags' >
                 
@@ -73,7 +73,7 @@
               </ul>
             </li>
             
-            <li class='shader' onclick='loadShader("shaders/basics-basic-uniforms")'>
+            <li class='shader' data-shader-name='basics-basic-uniforms'>
               <label>Basic Uniforms</label>
               <ul class='tags' >
                 
@@ -86,7 +86,7 @@
               </ul>
             </li>
             
-            <li class='shader' onclick='loadShader("shaders/basics-basic-variables")'>
+            <li class='shader' data-shader-name='basics-basic-variables'>
               <label>Basic Variables</label>
               <ul class='tags' >
                 
@@ -103,7 +103,7 @@
           <h2>Misc</h2>
           <ul class='shader-list'>
             
-            <li class='shader' onclick='loadShader("shaders/misc-linear-to-srgb")'>
+            <li class='shader' data-shader-name='misc-linear-to-srgb'>
               <label>Linear To Srgb</label>
               <ul class='tags' >
                 
@@ -122,7 +122,18 @@
           <h2>Rendering</h2>
           <ul class='shader-list'>
             
-            <li class='shader' onclick='loadShader("shaders/rendering-point-lit-geometry")'>
+            <li class='shader' data-shader-name='rendering-fullscreen-quad'>
+              <label>Fullscreen Quad</label>
+              <ul class='tags' >
+                
+                <li>wgsl</li>
+                
+                <li>es3.glsl</li>
+                
+              </ul>
+            </li>
+            
+            <li class='shader' data-shader-name='rendering-point-lit-geometry'>
               <label>Point Lit Geometry</label>
               <ul class='tags' >
                 
@@ -133,7 +144,7 @@
               </ul>
             </li>
             
-            <li class='shader' onclick='loadShader("shaders/rendering-textured-geometry")'>
+            <li class='shader' data-shader-name='rendering-textured-geometry'>
               <label>Textured Geometry</label>
               <ul class='tags' >
                 
@@ -155,9 +166,9 @@
     </nav>
     <div class='editors'>
       <iframe class='editor' src='shaders/README.html'></iframe>
-      <iframe class='editor' src='shaders/LICENSE.html'></iframe>
+      <iframe class='editor hidden'></iframe>
     </div>
 
-    <script src='assets/main.js'></script>
+    <script type='module' src='assets/main.js'></script>
   </body>
 </html>
