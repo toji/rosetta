@@ -2,11 +2,7 @@
 // Textured Geometry
 //-----------------------
 
-// GLSL requires each entry point (vertex, fragment) to be in separate shaders.
-// This file will show them both for easy reference, but in real use they would
-// need to be compiled separately.
-
-// ----- Vertex Shader -----
+// @file: Vertex Shader
 uniform mat4 projection;
 uniform mat4 view;
 uniform mat4 model;
@@ -24,7 +20,7 @@ void main() {
   varTexcoord = texcoord;
 }
 
-// ----- Fragment Shader -----
+// @file: Fragment Shader
 precision highp float;
 
 uniform sampler2D baseColorTexture;

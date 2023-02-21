@@ -12,7 +12,7 @@
 // Shader is intended to be called with a vertex buffer containing a cube that
 // extends from [-1, -1, -1] to [1, 1, 1].
 
-// ----- Vertex Shader -----
+// @file: Vertex Shader
 #version 300 es
 
 layout(std140) uniform Camera {
@@ -40,7 +40,7 @@ void main() {
   gl_Position = gl_Position.xyww;
 }
 
-// ----- Fragment Shader -----
+// @file: Fragment Shader
 #version 300 es
 precision highp float;
 

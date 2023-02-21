@@ -5,11 +5,7 @@
 // This shader renders basic geometry lit by some number of point lights.
 // The geometry is presented as flat white with no texture and no specular.
 
-// GLSL requires each entry point (vertex, fragment) to be in separate shaders.
-// This file will show them both for easy reference, but in real use they would
-// need to be compiled separately.
-
-// ----- Vertex Shader -----
+// @file: Vertex Shader
 #version 300 es
 
 layout(std140) uniform Camera {
@@ -31,7 +27,7 @@ void main() {
   varNormal = (model * vec4(input.normal, 0.0)).xyz;
 }
 
-// ----- Fragment Shader -----
+// @file: Fragment Shader
 #version 300 es
 precision highp float;
 

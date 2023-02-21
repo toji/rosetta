@@ -29,15 +29,9 @@ permalink: "shaders/{{ shader.outName }}.html"
           {% endif %}
           <label for='{{ext}}'>{{ext}}</label>
           <div class='content {{ext}}'>
-            {% if ext == 'md' %}
-              {% markdown %}
-              {%- include '../../' + shader.url + '.' + ext -%}
-              {% endmarkdown %}
-            {% else %}
-              {% highlight highlightLanguage[ext] %}
-              {% include '../../' + shader.url + '.' + ext %}
-              {% endhighlight %}
-            {% endif %}
+            {% shader ext %}
+            {%- include '../../' + shader.url + '.' + ext -%}
+            {% endshader %}
           </div>
         </li>
         {% endfor %}

@@ -86,6 +86,15 @@
           "es3.glsl"
         ]
       },
+      "skybox": {
+        "name": "Skybox",
+        "url": "./shaders/rendering/skybox",
+        "outName": "rendering-skybox",
+        "extensions": [
+          "wgsl",
+          "es3.glsl"
+        ]
+      },
       "textured-geometry": {
         "name": "Textured Geometry",
         "url": "./shaders/rendering/textured-geometry",
@@ -174,6 +183,15 @@
       "name": "Point Lit Geometry",
       "url": "./shaders/rendering/point-lit-geometry",
       "outName": "rendering-point-lit-geometry",
+      "extensions": [
+        "wgsl",
+        "es3.glsl"
+      ]
+    },
+    {
+      "name": "Skybox",
+      "url": "./shaders/rendering/skybox",
+      "outName": "rendering-skybox",
       "extensions": [
         "wgsl",
         "es3.glsl"

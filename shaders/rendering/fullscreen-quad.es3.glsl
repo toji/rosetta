@@ -6,11 +6,7 @@
 // texture. It defines the geometry needed in the shader so that no vertex or
 // index buffers need to be bound.
 
-// GLSL requires each entry point (vertex, fragment) to be in separate shaders.
-// This file will show them both for easy reference, but in real use they would
-// need to be compiled separately.
-
-// ----- Vertex Shader -----
+// @file: Vertex Shader
 #version 300 es
 
 out vec2 varTexcoord;
@@ -31,7 +27,7 @@ void main() {
   varTexcoord = gl_Position.xy * 0.5 + vec2(0.5);
 }
 
-// ----- Fragment Shader -----
+// @file: Fragment Shader
 #version 300 es
 precision highp float;
 
