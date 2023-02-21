@@ -73,6 +73,15 @@ Tabs
   font-size: 0.9em;
 }
 
+.content pre h4 {
+  font-weight: bold;
+  font-size: 1.1em;
+  background-color: #fafafa;
+  color: black;
+  padding: 0.5em;
+  margin: 0.2em -1em;
+}
+
 /*
 Markdown
 */
