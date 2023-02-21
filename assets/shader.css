@@ -72,3 +72,23 @@ Tabs
   margin: 0;
   font-size: 0.9em;
 }
+
+/*
+Markdown
+*/
+
+.content.md {
+  background: #272822;
+  color: #ddd;
+  padding: 1em;
+  border-radius: 0.3em;
+}
+
+.content.md a {
+  text-decoration: none;
+  color: #79d;
+}
+
+.content.md a:hover {
+  text-decoration: underline;
+}
