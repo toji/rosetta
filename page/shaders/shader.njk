@@ -10,6 +10,7 @@ permalink: "shaders/{{ shader.outName }}.html"
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_parent">
 
     <title>{{shader.name}}</title>
 
@@ -27,10 +28,16 @@ permalink: "shaders/{{ shader.outName }}.html"
           <input type='radio' id='{{ext}}' name='shader-tabs'>
           {% endif %}
           <label for='{{ext}}'>{{ext}}</label>
-          <div class='content'>
-            {% highlight highlightLanguage[ext] %}
-            {% include '../../' + shader.url + '.' + ext %}
-            {% endhighlight %}
+          <div class='content {{ext}}'>
+            {% if ext == 'md' %}
+              {% markdown %}
+              {%- include '../../' + shader.url + '.' + ext -%}
+              {% endmarkdown %}
+            {% else %}
+              {% highlight highlightLanguage[ext] %}
+              {% include '../../' + shader.url + '.' + ext %}
+              {% endhighlight %}
+            {% endif %}
           </div>
         </li>
         {% endfor %}

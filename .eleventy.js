@@ -1,3 +1,4 @@
+const markdownIt = require("markdown-it");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const buildShaderList = require("./scripts/build-shader-list");
 const fs = require('fs');
@@ -14,6 +15,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPassthroughCopy('./page/assets');
   //eleventyConfig.addPassthroughCopy('./shaders');
+
+  const md = new markdownIt({ html: true });
+
+  eleventyConfig.addPairedShortcode("markdown", (content) => {
+    return md.render(content);
+  });
 
   eleventyConfig.addWatchTarget("./shaders");
 
